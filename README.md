@@ -5,9 +5,9 @@ Este é um programa em C que realiza a multiplicação de matrizes utilizando a 
 ## Descrição
 O código consiste em uma implementação da multiplicação de matrizes utilizando threads POSIX para paralelizar o processo. A função `multiplicar_matrizes` é responsável por realizar a multiplicação das matrizes, dividindo o trabalho entre as threads. O struct `Dados_thread` é usado para armazenar os dados necessários para cada thread executar a multiplicação parcial das matrizes. A função `task` é a tarefa executada por cada thread. Cada thread recebe uma porção das linhas da primeira matriz para multiplicar pela segunda matriz. As matrizes são lidas do arquivo de entrada utilizando a função `input_matriz`. O resultado da multiplicação é gravado no arquivo de saída usando a função `imprimir_output`. É possível Modificar o valor de `num_threads` no código-fonte para controlar o número de threads a serem utilizadas na multiplicação.
 
-## Formato do Arquivo de Entrada (pthread.input)
+## Formato do Arquivo de Entrada (matrizes.input)
 
-O arquivo `pthread.input` deve conter o seguinte formato, no qual cada operação de multiplicação é definida por um conjunto de duas matrizes:
+O arquivo `matrizes.input` deve conter o seguinte formato, no qual cada operação de multiplicação é definida por um conjunto de duas matrizes:
 
 ```
 <num_operacoes>
@@ -24,15 +24,15 @@ O arquivo `pthread.input` deve conter o seguinte formato, no qual cada operaçã
 Para compilar o programa, utilize o seguinte comando:
 
 ```bash
-gcc -g -Wall main.c -o main.bin -pthread
+gcc -g -Wall main.c -o main.bin
 ```
 
 Após compilar, você pode executar o programa da seguinte forma:
 
 ```bash
-./main.bin pthread.input pthread.output
+./main.bin matrizes.input matrizes.output
 ```
 
 Onde:
-- `pthread.input` é o arquivo de entrada contendo as matrizes a serem multiplicadas. 
-- `pthread.output` é o arquivo de saída onde o resultado da multiplicação será gravado.
+- `matrizes.input` é o arquivo de entrada contendo as matrizes a serem multiplicadas. 
+- `matrizes.output` é o arquivo de saída onde o resultado da multiplicação será gravado.
